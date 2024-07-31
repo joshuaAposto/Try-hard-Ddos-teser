@@ -130,7 +130,7 @@
     <script>
         async function updateData() {
             try {
-                const response = await fetch('/count');
+                const response = await fetch('https://d-do-s-tester.vercel.app/count');
                 const data = await response.json();
                 document.getElementById('requestCounter').innerText = 'Number of Requests: ' + data.requestCount;
             } catch (error) {
@@ -140,7 +140,7 @@
 
         async function fetchStatus() {
             try {
-                const response = await fetch('/status');
+                const response = await fetch('https://d-do-s-tester.vercel.app/status');
                 const data = await response.json();
                 document.getElementById('serverStatus').innerText = 'Server Status: ' + data.status;
             } catch (error) {
@@ -151,7 +151,7 @@
 
         async function resetCounter() {
             try {
-                await fetch('/reset', { method: 'POST' });
+                await fetch('https://d-do-s-tester.vercel.app/reset', { method: 'POST' });
                 updateData();
             } catch (error) {
                 console.error('Error resetting counter:', error);
